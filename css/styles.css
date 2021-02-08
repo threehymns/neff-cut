@@ -62,9 +62,10 @@ aside {
 .cards {
   width: 100%;
   box-sizing: border-box;
-  /* overflow-x: hidden; */
-  /*overflow-y: visible;*/
-  /* height: 480px;*/
+   overflow-x: hidden;
+  overflow-y: hidden;
+  /* height: 490px;*/
+  min-height: 480px;
   padding-top: 20px;
 }
 
@@ -456,13 +457,22 @@ footer .footer-container p {
   margin-right: 0;
   text-decoration: none;
   border-radius: 4px;
-  border: 1px solid #ffffff44;
-  transition: background 0.3s;
+  /* border: 1px solid #ffffff44; */
+  transition: background 0.3s, box-shadow 0.5s;
+
+  background: #333333;
+  background: linear-gradient(145deg, #2e2e2e, #373737);
+  box-shadow:  4px 4px 8px #2b2b2b,
+               -4px -4px 8px #3b3b3b;
 }
 
 .sci li a:hover {
   background: rgb(255, 255, 255);
-  transition: background 0.3s;
+  transition: background 0.3s, box-shadow 0.5s;
+
+  background: #333333;
+  box-shadow: inset 4px 4px 8px #2b2b2b,
+              inset -4px -4px 8px #3b3b3b;
 }
 
 .sci li a .fab {
@@ -473,8 +483,8 @@ footer .footer-container p {
 
 .sci li a:hover .fab {
   color: #4263eb;
-  font-size: 28px;
-  text-shadow: 2px 2px 15px rgb(255, 255, 255);
+  font-size: 22px;
+  /* text-shadow: 0px 0px 7px rgb(255, 255, 255); */
   transition: color 0.3s, font-size 0.3s;
 }
 
@@ -705,6 +715,20 @@ body::-webkit-scrollbar-thumb {
   }*/
 }
 
+@media screen and (max-width: 615px) {
+  aside {
+    width: 50%;
+    margin: 5px 25%;
+    text-align: center;
+    padding: 10px 0;
+    display: block;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-left: none;
+    box-sizing: border-box;
+  }
+}
+
 @media screen and (max-width: 970px) {
   .hero {
     /*background-image: url(../neff-cut-lawn.jpg);*/
@@ -725,6 +749,9 @@ body::-webkit-scrollbar-thumb {
     margin-top: 20px;
     max-width: 400px;
   }
+  .item-card:last-child {
+    margin-bottom: 40px;
+  }  
   .cards {
     display: flex;
     flex-wrap: wrap;
