@@ -137,6 +137,7 @@ aside {
   background-attachment: fixed;
   width: 100%;
   height: 100vh;
+  min-height: calc(10vw - 30px + 450px - 50px);
   max-height: calc(100vh - 205px);
   position: relative;
   text-shadow: 4px 4px 7px #111;
