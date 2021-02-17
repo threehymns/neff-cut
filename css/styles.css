@@ -9,6 +9,11 @@
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  min-height: 100vh;
+}
+
 body {
   color: #222;
   width: 100%;
@@ -55,6 +60,27 @@ aside {
   width: 100%;
   overflow-y: visible;
 }
+
+.tel .phone-number {
+  display: block;
+  font-size: 12.5vw;
+  text-align: center;
+  text-decoration: none;
+  color: #111;
+  padding: 0;
+}
+
+.tel {
+  display: block;
+  padding: 16vh 0;
+}
+
+@media screen and (max-width: 526px) {
+  .tel .phone-number {
+    font-size: 12vw;
+  }
+}
+
 /**********
  Item Cards
 ***********/
@@ -62,7 +88,7 @@ aside {
 .cards {
   width: 100%;
   box-sizing: border-box;
-   overflow-x: hidden;
+  overflow-x: hidden;
   overflow-y: hidden;
   /* height: 490px;*/
   min-height: 480px;
@@ -130,7 +156,6 @@ aside {
   font-size: 25px;
 }
 
-
 .card-inner {
   background: white;
   z-index: 1000;
@@ -149,7 +174,7 @@ aside {
   width: 100%;
   height: calc(100vh - 205px);
   min-height: calc(10vw + 5vh - 30px + 50px);
-  max-height: calc(80vh); 
+  max-height: calc(80vh);
   position: relative;
   text-shadow: 4px 4px 7px #111;
   z-index: 0;
@@ -457,28 +482,28 @@ footer .footer-container p {
 
 .sci li {
   list-style: none;
-  margin: 0;
+  margin: 0 4px;
 }
 
 .sci li a {
   display: block;
   width: 40px;
   height: 40px;
-  /*padding: 5px;*/
+  padding: 3px;
   background: var(--blue);
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 0;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 6px;
   /* border: 1px solid #ffffff44; */
   transition: background 0.3s, box-shadow 0.5s;
-
+  margin-right: 30px;
   background: #333333;
   background: linear-gradient(145deg, #2e2e2e, #373737);
-  box-shadow:  4px 4px 8px #2b2b2b,
-               -4px -4px 8px #3b3b3b;
+  box-shadow: 4px 4px 8px #2b2b2b, -4px -4px 8px #3b3b3b, inset 0 0 0 #2b2b2b,
+    inset 0 0 0 #3b3b3b;
 }
 
 .sci li a:hover {
@@ -486,21 +511,27 @@ footer .footer-container p {
   transition: background 0.3s, box-shadow 0.5s;
 
   background: #333333;
-  box-shadow: inset 4px 4px 8px #2b2b2b,
-              inset -4px -4px 8px #3b3b3b;
+  box-shadow: 0 0 0 #2b2b2b, 0 0 0 #3b3b3b, inset 4px 4px 8px #2b2b2b,
+    inset -4px -4px 8px #3b3b3b;
 }
 
 .sci li a .fab {
-  color: #fff;
+  color: #4263eb;
+  background: white;
+  padding: 3px;
+  border-radius: 50%;
   font-size: 25px;
-  transition: color 0.3s, font-size 0.3s;
+  text-shadow: 0 0 1px #000;
+  transition: color 0.3s, font-size 0.3s, background, 0.4s;
 }
 
 .sci li a:hover .fab {
-  color: #4263eb;
+  color: #fff;
   font-size: 22px;
+  background: #4263eb;
+  padding: 2px;
   /* text-shadow: 0px 0px 7px rgb(255, 255, 255); */
-  transition: color 0.3s, font-size 0.3s;
+  transition: color 0.3s, font-size 0.3s, background, 0.4s;
 }
 
 .quickLinks {
@@ -769,7 +800,7 @@ body::-webkit-scrollbar-thumb {
   }
   .item-card:last-child {
     margin-bottom: 40px;
-  }  
+  }
   .cards {
     display: flex;
     flex-wrap: wrap;
@@ -859,8 +890,6 @@ body::-webkit-scrollbar-thumb {
       border-radius 1s, color 0.4s, transform 0.4s;
   }
 }
-
-
 
 /***********
  Font Awsome
