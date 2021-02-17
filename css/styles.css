@@ -86,8 +86,8 @@ aside {
 }
 
 .item-card:hover {
-  transform: scale(1.07) rotate(-0.5deg);
-  box-shadow: 13px 12px 15px rgba(58, 58, 58, 0.63);
+  transform: scale(1.07) rotate(-0.5deg) translate(0, -5px);
+  box-shadow: 8px 8px 15px rgba(36, 36, 36, 0.63);
   z-index: 1;
   transition: transform 0.5s, box-shadow 0.5s;
 }
@@ -101,6 +101,15 @@ aside {
   width: 100%;
   border-radius: 20px 20px 0 0;
   margin: 0;
+  overflow: auto;
+  object-fit: fill;
+  object-position: 0 -50px;
+}
+
+.item-card div.img img.sixteen-to-nine {
+  height: 260px;
+  width: auto;
+  object-position: 0 -10px;
 }
 
 .item-card h2,
@@ -121,8 +130,10 @@ aside {
   font-size: 25px;
 }
 
-.item-card div.img img.sixteen-to-nine {
-  height: 200px;
+
+.card-inner {
+  background: white;
+  z-index: 1000;
 }
 /************
  Hero Styles
@@ -136,9 +147,9 @@ aside {
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
-  height: 100vh;
-  min-height: calc(10vw - 30px + 450px - 50px);
-  max-height: calc(100vh - 205px);
+  height: calc(100vh - 205px);
+  min-height: calc(10vw + 5vh - 30px + 50px);
+  max-height: calc(80vh); 
   position: relative;
   text-shadow: 4px 4px 7px #111;
   z-index: 0;
@@ -146,7 +157,7 @@ aside {
 }
 
 .hero h1 {
-  font-size: calc(10vw - 30px);
+  font-size: calc(10vh + 5vw - 30px);
 }
 
 .hero summary {
@@ -168,9 +179,9 @@ aside {
 }
 
 .hero div,
-.hero p {
+.hero summary {
   text-align: center;
-  margin-top: 70px;
+  margin-top: 6vh;
   color: #fff;
   /*transition: margin .3s;*/
 }
@@ -178,7 +189,7 @@ aside {
 .hero > div.bible {
   position: absolute;
   bottom: 10px;
-  /*height: 30px;*/
+  /* height: 50; */
   width: 100%;
   margin: 0;
   padding: 0;
@@ -186,6 +197,7 @@ aside {
   justify-content: center;
   /*pointer-events: none;*/
   overflow: visible;
+  z-index: -1;
 }
 
 .hero div.bible > p.bible-inner {
@@ -226,6 +238,7 @@ aside {
   border-top: 0 solid rgb(114, 0, 0);
   border-bottom: 3px solid rgb(114, 0, 0);
   /* b: sienna 1px solid;*/
+  transform: translate(0);
   transition: box-shadow 0.5s, font-size 0.5s, border-top 0.3s,
     border-bottom 0.3s, text-shadow 0.5s;
 }
@@ -238,8 +251,9 @@ aside {
   border-top: 4px solid rgb(114, 0, 0);
   border-bottom: 0 solid rgb(114, 0, 0);
   box-shadow: 5px 10px 20px #151515, 0 0 0 1px rgb(80, 0, 0);
+  transform: translate(20px, 40px);
   transition: box-shadow 0.5s, font-size 0.5s, border-top 0.3s,
-    border-bottom 0.3s, text-shadow 0.5s;
+    border-bottom 0.3s, text-shadow 0.5s, transform 0.3;
 }
 
 .hero a i,
@@ -736,11 +750,11 @@ body::-webkit-scrollbar-thumb {
     background-color: rgb(195, 230, 191);
     background-blend-mode: multiply;
     background-size: 970px;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     background-attachment: fixed;
     width: 100%;
     height: 100vh;
-    max-height: 500px;
+    /* max-height: 500px; */
     transition: text-shadow 1s, font-size 1s, max-height 1s, background-size 1s;
   }
   .item-card {
@@ -749,6 +763,9 @@ body::-webkit-scrollbar-thumb {
     margin-right: auto;
     margin-top: 20px;
     max-width: 400px;
+  }
+  .item-card:not(:first-child) img {
+    transform: translate(0, -50px);
   }
   .item-card:last-child {
     margin-bottom: 40px;
@@ -842,6 +859,8 @@ body::-webkit-scrollbar-thumb {
       border-radius 1s, color 0.4s, transform 0.4s;
   }
 }
+
+
 
 /***********
  Font Awsome
