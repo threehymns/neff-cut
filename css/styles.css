@@ -26,11 +26,88 @@ body {
 Main Styles
 ***********/
 
-h1 {
+.hero h1 {
   padding-top: 10%;
   color: #fff;
   text-align: center;
   font-size: 4em;
+}
+
+.about-content {
+  width: 60%;
+  padding: 50px;
+  border-radius: 10px;
+  /* background-color: rgba(#ffffff, 0.4); */
+  margin: 30px auto;
+  align-self: center;
+  border: 2px solid var(--blue);
+  /* backdrop-filter: blur(1.5rem); */
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.123);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.flex-container::before {
+  content: "";
+  width: 99%;
+  height: 99%;
+  background: linear-gradient(180deg, hsla(146, 90%, 28%, 1) 10%, rgb(0, 0, 0) 60%);
+  /* border: 2px solid var(--blue); */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -20;
+  clip-path: circle(8% at 15% 17%);
+  animation: before 3s infinite alternate;
+}
+
+.flex-container::after {
+  content: "";
+  width: 99%;
+  height: 99vh;
+  background: linear-gradient(180deg, hsla(146, 90%, 28%, 1) 30%, rgb(0, 0, 0) 63%);
+  /* border: 2px solid var(--blue); */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -20;
+  clip-path: circle(12% at 85% 35%);
+  animation: after 3s 2s infinite alternate;
+}
+
+@keyframes after {
+  from {
+    clip-path: circle(12% at 85% 35%);
+  }
+  to {
+    clip-path: circle(12% at 85.5% 36%);
+  }
+}
+
+@keyframes before {
+  from {
+    clip-path: circle(8% at 17% 17%);
+  }
+  to {
+    clip-path: circle(8% at 16.5% 17.5%);
+  }
+}
+
+/* 
+.flex-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+} */
+
+h1.about {
+  text-align: center;
+  font-size: 4em;
+  margin-top: -20px;
 }
 
 aside {
@@ -281,7 +358,8 @@ aside {
   /* box-shadow: 5px 10px 20px #151515, 0 0 0 1px rgb(80, 0, 0); */
   /* box-sizing: content-box; */
   transform: translateY(20px);
-  transition: box-shadow 0.5s, font-size 0.5s, border-top 0.3s, border-bottom 0.3s, text-shadow 0.5s, transform 0.3;
+  transition: box-shadow 0.5s, font-size 0.5s, border-top 0.3s,
+    border-bottom 0.3s, text-shadow 0.5s, transform 0.3;
 }
 
 .hero a i,
@@ -348,7 +426,7 @@ aside {
   top: 0;
   width: 100%;
   min-height: 47px;
-  z-index: 2;
+  z-index: 20000;
 }
 
 .topnav a.float-right {
@@ -790,7 +868,8 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     /*height: 100vh;*/
     /* max-height: 500px; */
-    transition: text-shadow 1s, font-size 1s, max-height 1s, background-size 0.2s;
+    transition: text-shadow 1s, font-size 1s, max-height 1s,
+      background-size 0.2s;
   }
   .item-card {
     width: 90%;
@@ -813,8 +892,10 @@ body::-webkit-scrollbar-thumb {
 }
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-height: 530px) {
-.hero h1 {padding-top: 2vh; transition: padding 0.2s;}
-
+  .hero h1 {
+    padding-top: 2vh;
+    transition: padding 0.2s;
+  }
 }
 
 @media screen and (max-width: 910px) {
@@ -844,7 +925,7 @@ body::-webkit-scrollbar-thumb {
       border-radius 1s, color 0.4s, transform 0.4s;
   }
 
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 
   .topnav.responsive {
     position: relative;
@@ -953,6 +1034,10 @@ body::-webkit-scrollbar-thumb {
 
 .fa-angle-double-right:before {
   content: "\f101";
+}
+.fa-images:before {
+  content: "\f302"; 
+  font-size: 1.1em;
 }
 
 .fa-facebook::before {
