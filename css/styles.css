@@ -33,6 +33,17 @@ Main Styles
   font-size: 4em;
 }
 
+noscript {
+  text-align: center;
+  display: block;
+  background-color: #eb4242;
+  padding: 10px;
+  border: 2px solid #830000;
+  margin: 10px 50px 0 50px;
+  list-style: 1.3em;
+  font-weight: 800;
+}
+
 .about-content {
   width: 60%;
   padding: 50px;
@@ -43,19 +54,20 @@ Main Styles
   border: 2px solid var(--blue);
   /* backdrop-filter: blur(1.5rem); */
   z-index: 30;
-  background: rgba(255, 255, 255, 0.123);
+  background-color: rgba(255, 255, 255, 0);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   border-radius: 10px;
+  background-image: url(var(--glass));
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.flex-container::before {
+.glass-background::before {
   content: "";
   width: 99%;
   height: 99%;
-  background: linear-gradient(180deg, hsla(146, 90%, 28%, 1) 10%, rgb(0, 0, 0) 60%);
+  background: linear-gradient(180deg, hsla(146, 90%, 28%, 1) 15%, rgb(0, 0, 0) 37%);
   /* border: 2px solid var(--blue); */
   position: absolute;
   top: 0;
@@ -65,26 +77,26 @@ Main Styles
   animation: before 3s infinite alternate;
 }
 
-.flex-container::after {
+.glass-background::after {
   content: "";
   width: 99%;
   height: 99vh;
-  background: linear-gradient(180deg, hsla(146, 90%, 28%, 1) 30%, rgb(0, 0, 0) 63%);
+  background: linear-gradient(180deg, hsla(146, 90%, 28%, 1) 40%, rgb(0, 0, 0) 83%);
   /* border: 2px solid var(--blue); */
   position: absolute;
   top: 0;
   left: 0;
   z-index: -20;
-  clip-path: circle(12% at 85% 35%);
+  clip-path: circle(12% at 85% 55%);
   animation: after 3s 2s infinite alternate;
 }
 
 @keyframes after {
   from {
-    clip-path: circle(12% at 85% 35%);
+    clip-path: circle(12% at 85% 55%);
   }
   to {
-    clip-path: circle(12% at 85.5% 36%);
+    clip-path: circle(12% at 85.5% 56%);
   }
 }
 
@@ -98,13 +110,13 @@ Main Styles
 }
 
 /* 
-.flex-container {
+.glass-background {
   width: 100%;
   display: flex;
   align-items: center;
 } */
 
-h1.about {
+h1.page-title {
   text-align: center;
   font-size: 4em;
   margin-top: -20px;
@@ -139,25 +151,75 @@ aside {
   overflow-y: visible;
 }
 
-.tel .phone-number {
+.contact-title {
+  font-size: calc(10vh + 5vw - 70px);
+  text-align: center;
+  margin: 10px 0 0 0;
+  width: 100%;
+}
+
+.contact-item a {
   display: block;
-  font-size: 12.5vw;
+  width: 100%;
+  font-size: 5vw;
   text-align: center;
   text-decoration: none;
-  color: #111;
+  color: #222;
   padding: 0;
+  transition: color 0.7s;
 }
 
-.tel {
+.contact-item {
   display: block;
-  padding: 16vh 0;
+  padding: 6vh 0 0 0;
+  width: 100%;
 }
 
+.contact-item:last-child {
+  padding: 6vh 0 6vh 0;
+}
+
+.contact-item a:after {
+  position: absolute;
+  display: block;
+  text-align: center;
+  width: 100%;
+  font-size: 1.8vw;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: opacity 0.25s, transform 0.5s, font-size 0.4s;
+}
+
+.contact-item a:hover:after {
+  transform: translateY(0);
+  opacity: 1;
+  font-size: 2vw;
+  transition: opacity 0.6s, transform 0.5s, font-size 0.4s;
+}
+.contact-item a:hover {
+  color: rgb(0, 104, 173);
+  transition: color 0.7s;
+}
+
+.phone-number:after {
+  content: "Call Ryan";
+}
+
+.email:after {
+  content: "Send an email to Neff Cut";
+}
+
+.messenger:after {
+  content: "Chat with Ryan on Messenger";
+}
+
+
+/*
 @media screen and (max-width: 526px) {
-  .tel .phone-number {
+  .contact .phone-number {
     font-size: 12vw;
   }
-}
+}*/
 
 /**********
  Item Cards
@@ -358,8 +420,7 @@ aside {
   /* box-shadow: 5px 10px 20px #151515, 0 0 0 1px rgb(80, 0, 0); */
   /* box-sizing: content-box; */
   transform: translateY(20px);
-  transition: box-shadow 0.5s, font-size 0.5s, border-top 0.3s,
-    border-bottom 0.3s, text-shadow 0.5s, transform 0.3;
+  transition: box-shadow 0.5s, font-size 0.5s, border 0.3s, text-shadow 0.5s, transform 0.3;
 }
 
 .hero a i,
@@ -454,6 +515,8 @@ aside {
   text-decoration: none;
   font-size: 19px;
   padding-left: 40px;
+  transition: background-color 0.5s, margin-left 0.5s, transform 0.6s,
+    border-radius 1s, color 0.4s, width 1s;
 }
 
 .topnav a {
@@ -480,12 +543,11 @@ aside {
 }
 
 .topnav a:hover:first-child {
-  background-color: rgb(0, 182, 45);
   color: black;
   border-radius: 0 0 7px 7px;
   transform: translateY(-8px);
   transition: background-color 0.5s, margin-left 0.5s, transform 0.6s,
-    border-radius 1s, color 0.4s;
+    border-radius 1s, color 0.4s, width 1s;
 }
 /* Add an active class to highlight the current page */
 
@@ -897,20 +959,28 @@ body::-webkit-scrollbar-thumb {
     transition: padding 0.2s;
   }
 }
-
+  .topnav a:first-child {
+    transition: background-color 0.5s, margin-left 0.5s, transform 0.6s,
+    border-radius 1s, color 0.4s, width 1s !important;
+  }
 @media screen and (max-width: 910px) {
   .topnav a:not(:nth-child(1)) {
-    display: none;
+    /* display: none; */
+    position: absolute;
+    opacity: 0;
+    /* transition: opacity 1s !important; */
   }
   .topnav a.icon {
     float: right;
     display: block;
+    position: relative;
     border: 1px solid white;
     border-top: none;
     padding: 11px;
     margin-right: 3px;
     border-radius: 0 0 2px 2px;
     background-color: #282828;
+    opacity: 1;
     transition: background-color 0.5s, margin-left 0.5s, padding 0.6s,
       border-radius 1s, color 0.4s, transform 0.4s;
   }
@@ -924,6 +994,7 @@ body::-webkit-scrollbar-thumb {
     transition: background-color 0.5s, margin-left 0.5s, padding 0.6s,
       border-radius 1s, color 0.4s, transform 0.4s;
   }
+
 
   /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 
@@ -957,8 +1028,12 @@ body::-webkit-scrollbar-thumb {
   .topnav.responsive a {
     float: none;
     display: block;
+    position: relative;
     text-align: left;
     margin-right: 3px;
+    opacity: 1;
+    transition: opacity 1.5s, background-color 0.5s, margin-left 0.5s, padding 0.7s,
+    border-radius 1s, color 0.7s, transform 0.7s !important;
   }
   .topnav.responsive a:nth-child(2) {
     margin-top: 10px;
@@ -1038,6 +1113,13 @@ body::-webkit-scrollbar-thumb {
 .fa-images:before {
   content: "\f302"; 
   font-size: 1.1em;
+}
+.fa-envelope:before {
+  content: "\f0e0"; 
+}
+
+.fa-facebook-messenger:before {
+  content: "\f39f"; 
 }
 
 .fa-facebook::before {
