@@ -904,10 +904,19 @@ body::-webkit-scrollbar-thumb {
   }*/
 }
 
-@media screen and (max-width: 615px) {
+@media screen and (max-width: 700px) {
+
+  aside::before {
+    content: "Some of Our Services";
+    position: absolute;
+    font-size: 1.4em;
+    transform: translateX(-35%) translateY(-30px);
+  }
+
   aside {
     width: 50%;
-    margin: 5px 25%;
+    margin: 5px 25% 20px 25%;
+    border-radius: 4px;
     text-align: center;
     padding: 10px 0;
     display: block;
@@ -915,6 +924,7 @@ body::-webkit-scrollbar-thumb {
     border-bottom: 1px solid;
     border-left: none;
     box-sizing: border-box;
+    padding-top: 50px;
   }
 }
 
