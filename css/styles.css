@@ -44,6 +44,13 @@ noscript {
   font-weight: 800;
 }
 
+hr {
+  width: 25%;
+  margin: 30px auto;
+  border: 3px outset;
+}
+
+
 .about-content {
   width: 60%;
   padding: 50px;
@@ -340,7 +347,7 @@ aside {
     #ffffff00
   );
   color: #fff;
-  margin: 40px 0 0 calc(50% - 175px);
+  margin: 10px 0 0 calc(50% - 175px) !important;
   width: 350px;
   padding: 5px 0 5px 0;
 }
