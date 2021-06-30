@@ -303,7 +303,7 @@ aside {
 
 .card-inner {
   background: white;
-  z-index: 1000;
+  z-index: 1;
 }
 /************
  Hero Styles
@@ -492,7 +492,7 @@ aside {
   top: 0;
   width: 100%;
   min-height: 47px;
-  z-index: 20000;
+  z-index: 201;
 }
 
 .topnav a.float-right {
@@ -1132,6 +1132,11 @@ body::-webkit-scrollbar-thumb {
 .fa-envelope:before {
   content: "\f0e0"; 
 }
+.fa-caret-left:before {
+  content: "\f0d9"; }
+
+.fa-caret-right:before {
+  content: "\f0da"; }
 
 .fa-facebook-messenger:before {
   content: "\f39f"; 

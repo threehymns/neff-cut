@@ -9,6 +9,7 @@
     <meta name="msapplication-TileImage" content="./favicon.svg">
     <!-- Link tags -->
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/gallery.css">
     <!--<link rel="stylesheet" type="text/css" src="./css/fontawsome.css"></link>-->
     <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
@@ -26,8 +27,8 @@
 
 
     <div class="topnav" id="myTopnav">
-        <a href="../" class="active"><i class="fa fa-toolbox fa-lg"></i> <b>Neff Cut </b><span
-                class="small ">&amp; Remodeling</span></a>
+        <a href="../" class="active"><i class="fa fa-toolbox fa-lg"></i> <b>Neff Cut </b><span class="small ">&amp;
+                Remodeling</span></a>
         <a href="../gallery/"><i class="far fa-images"></i> Gallery</a>
         <a href="../lawn-care/"><i class="fa fa-leaf"></i> Lawn Care</a>
         <a href="../remodeling/"><i class="fa fa-hammer"></i> Remodeling</a>
@@ -52,9 +53,41 @@
     </div>
 
     <div class="main-content">
+        <div class="gallery">
+            <a href="#img1">
+                <img class="thumb" src="../img/shed-before-after.jpg">
+            </a>
+            <!-- first image box -->
+            <div class="lightbox" id="img1">
+                <a href="#img3" class="fa fa-caret-left light-btn btn-prev"></a>
+                <a href="#_" class="btn-close">&times;</a>
+                <img src="../img/shed-before-after.jpg">
+                <a href="#img2" class="fa fa-caret-right light-btn btn-next"></a>
+            </div>
 
+            <a href="#img2">
+                <img class="thumb" src="https://unsplash.it/400/400">
+            </a>
+            <!-- second image box -->
+            <div class="lightbox" id="img2">
+                <a href="#img1" class="fa fa-caret-left light-btn btn-prev"></a>
+                <a href="#_" class="btn-close">&times;</a>
+                <img src="https://unsplash.it/400/400">
+                <a href="#img3" class="fa fa-caret-right light-btn btn-next"></a>
+            </div>
 
+            <a href="#img3">
+                <img class="thumb" src="https://unsplash.it/1366/768">
+            </a>
+            <!-- third image box -->
+            <div class="lightbox" id="img3">
+                <a href="#img2" class="fa fa-caret-left light-btn btn-prev"></a>
+                <a href="#_" class="btn-close">&times;</a>
+                <img src="https://unsplash.it/1366/768">
+                <a href="#img1" class="fa fa-caret-right light-btn btn-next"></a>
+            </div>
 
+        </div>
 
     </div>
 
