@@ -6,16 +6,27 @@
     text-align:center;
 	margin-top: 50px;
     display: flex;
+    flex-wrap: wrap;
 }
+h1.page-title {
+    margin-top: 20px;
+  }
 
 a.fa {
     text-decoration: none;
 }
 
 .thumb {
-    max-height: 171px;
-    border: solid 6px white;
-  border-radius: 2px;
+    max-height: 250px;
+    border: solid 6px rgb(196, 196, 196);
+    margin: 4px;
+  border-radius: 3px;
+  transition: transform 0.5s;
+}
+
+.thumb:hover {
+    transform: scale(1.03);
+    transition: transform 0.5s;
 }
 .lightbox {
     position: fixed;
@@ -34,8 +45,8 @@ a.fa {
     max-height: 80%;
     margin-top: 2%;
     opacity: 0;
-    -webkit-transition: opacity 0.6s;
-    transition: opacity 0.6s;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
 }
 .lightbox:target {
     outline: none;
@@ -66,6 +77,7 @@ a.fa {
     top: 45%;
     z-index: 99;
   font-size: 7vmax;
+  text-shadow: 0px 0px 10px #000;
   transition: transform 500ms;
 }
 .light-btn:hover {
@@ -94,7 +106,7 @@ a.fa {
     color: #fafafa;
     background-color: red;
     border: solid 5px white;
-    padding: 0.7vh 0.7vh;
+    padding: 7px 7px;
     border-radius: 15%;
     text-decoration: none;
     font-size: 5vh;
