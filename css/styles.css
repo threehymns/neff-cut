@@ -262,11 +262,12 @@ aside {
   padding-bottom: 20px;
   /* min-width: 300px;
   max-width: 400px;*/
+  will-change: transform;
   transition: transform 0.5s, box-shadow 0.5s;
 }
 
 .item-card:hover {
-  transform: scale(1.07) rotate(-0.5deg) translate(0, -5px);
+  transform: translate(0, -3px);
   box-shadow: 8px 8px 15px rgba(36, 36, 36, 0.63);
   z-index: 1;
   transition: transform 0.5s, box-shadow 0.5s;
