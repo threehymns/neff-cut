@@ -1078,6 +1078,11 @@ body::-webkit-scrollbar-thumb {
       border-radius 1s, color 0.4s, transform 0.4s;
   }
 }
+@media (prefers-reduced-motion: reduce) { 
+  * {
+    animation: none !important;
+  }
+}
 
 /***********
  Font Awsome
