@@ -18,9 +18,9 @@ a.fa {
 
 .thumb {
     max-height: 250px;
-    border: solid 6px rgb(196, 196, 196);
+    border: solid 4px #333;
     margin: 4px;
-  border-radius: 3px;
+  border-radius: 6px;
   transition: transform 0.5s;
 }
 
@@ -57,7 +57,7 @@ a.fa {
 }
 .lightbox:target img {
     border: solid 17px white;
-    border-radius: 4px;
+    border-radius: 6px;
     margin-top: 5%;
     opacity: 1;
     -webkit-transition: opacity 0.6s;
