@@ -656,7 +656,7 @@ footer .footer-container p {
   border-radius: 6px;
   /* border: 1px solid #ffffff44; */
   transition: background 0.3s, box-shadow 0.5s;
-  margin-right: 30px;
+  margin-right: 5px;
   background: #333333;
   background: linear-gradient(145deg, #2e2e2e, #373737);
   box-shadow: 4px 4px 8px #2b2b2b, -4px -4px 8px #3b3b3b, inset 0 0 0 #2b2b2b,
