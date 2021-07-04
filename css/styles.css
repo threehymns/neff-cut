@@ -247,6 +247,8 @@ aside {
   /* height: 490px;*/
   min-height: 480px;
   padding-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .item-card {
@@ -260,8 +262,8 @@ aside {
   box-shadow: 2px 2px 10px rgb(34, 34, 34);
   overflow: hidden;
   padding-bottom: 20px;
-  /* min-width: 300px;
-  max-width: 400px;*/
+  /* min-width: 300px;*/
+  max-width: 400px;
   will-change: transform;
   transition: transform 0.5s, box-shadow 0.5s;
 }
@@ -296,7 +298,8 @@ aside {
 .item-card h2,
 .item-card p,
 .item-card a {
-  margin-left: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .item-card a {
@@ -304,7 +307,7 @@ aside {
   display: inline;
   position: relative;
   /* width: 50px;*/
-  top: 40px;
+  top: 20px;
 }
 
 .item-card h2 {
@@ -925,13 +928,13 @@ body::-webkit-scrollbar-thumb {
     content: "Some of Our Services";
     position: absolute;
     font-size: 1.4em;
-    transform: translateX(-35%) translateY(-30px);
+    white-space: nowrap;
+    transform: translateX(-35%) translateY(-38px);
   }
 
   aside {
     width: 50%;
     margin: 5px 25% 20px 25%;
-    border-radius: 4px;
     text-align: center;
     padding: 10px 0;
     display: block;
@@ -943,21 +946,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-@media screen and (max-width: 970px) {
-  .hero {
-    /*background-image: url(../neff-cut-lawn.jpg);*/
-    background-color: rgb(195, 230, 191);
-    background-blend-mode: multiply;
-    /* background-size: 100vw 100vh; */
-    background-size: cover;
-    /* background-repeat: no-repeat; */
-    background-attachment: fixed;
-    width: 100%;
-    /*height: 100vh;*/
-    /* max-height: 500px; */
-    transition: text-shadow 1s, font-size 1s, max-height 1s,
-      background-size 0.2s;
-  }
+@media screen and (max-width: 1170px) {
   .item-card {
     width: 90%;
     margin-left: auto;
@@ -988,7 +977,7 @@ body::-webkit-scrollbar-thumb {
     transition: background-color 0.5s, margin-left 0.5s, transform 0.6s,
     border-radius 1s, color 0.4s, width 1s !important;
   }
-@media screen and (max-width: 910px) {
+@media screen and (max-width: 1020px) {
   .topnav a:not(:nth-child(1)) {
     /* display: none; */
     position: absolute;
